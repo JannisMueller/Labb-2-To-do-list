@@ -1,6 +1,5 @@
 package com.iths;
 
-
 import java.util.Scanner;
 
 public class Main {

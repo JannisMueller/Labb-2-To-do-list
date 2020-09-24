@@ -4,10 +4,8 @@ import java.util.Scanner;
 
 public class Main {
 
-
     public static TodoListSchool toDoListSchool = new TodoListSchool();
     public static ToDoListPrivate toDoListPrivate = new ToDoListPrivate();
-
 
     public static Scanner scanner = new Scanner(System.in);
 
@@ -16,16 +14,22 @@ public class Main {
         boolean exitProgram = false;
         int choiceMenu = 0;
 
-        System.out.println("Welcome to the Task-Manager!");
-        System.out.println("Enter 1 to create a to-do list for private tasks");
-        System.out.println("Enter 2 to create a to-do list for school task");
+        System.out.println("\t - Welcome to the Task-Manager -\t");
+        System.out.println("Enter 1 to create a to-do list for private tasks!" +
+                            "\nEnter 2 to create a to-do list for school task!");
 
 
         int choiceList  = scanner.nextInt();
         scanner.nextLine();
+        while(choiceList != 1 && choiceList != 2) {
+            System.out.println("Please choose between option 1 or 2!");
+            choiceList = scanner.nextInt();
+            scanner.nextLine();
+        }
+
 
         if(choiceList==1) {
-            System.out.println("\n##Task Manager for private tasks##");
+            System.out.println("\t- Task Manager for Private Tasks -\t");
             printMenu();
 
             while(!exitProgram) {
@@ -34,6 +38,11 @@ public class Main {
                         "What would you like to do? (Press 0 for all options)");
                 choiceMenu = scanner.nextInt();
                 scanner.nextLine();
+                while(!(choiceMenu >= 0 && choiceMenu<9)) {
+                    System.out.println("Please enter a number between 0-8!");
+                    choiceMenu = scanner.nextInt();
+                    scanner.nextLine();
+                }
 
                 switch (choiceMenu) {
                     case 0:
@@ -64,16 +73,22 @@ public class Main {
                         exitProgram = true;
                         System.out.println("Good bye and thank you for using our Task Manager for private tasks!");
                         break;
+
                 }
             }
                 } else if (choiceList==2) {
-                    System.out.println("\n##Task Manager for private tasks##");
+                    System.out.println("\t- Task Manager for school-related tasks -\t");
                     printMenu();
                     while (!exitProgram){
 
                         System.out.println("\nWhat would you like to do? (Press 0 for all options)");
                         choiceMenu = scanner.nextInt();
                         scanner.nextLine();
+                        while(!(choiceMenu >= 0 && choiceMenu<9)){
+                            System.out.println("Please enter a number between 0-8!");
+                           choiceMenu = scanner.nextInt();
+                            scanner.nextLine();
+                        }
 
                         switch (choiceMenu) {
                             case 0:
@@ -103,7 +118,7 @@ public class Main {
                                 break;
                             case 8:
                                 exitProgram = true;
-                                System.out.println("Good bye and thank you for using our Task Manager for school tasks !");
+                                System.out.println("Good bye and thank you for using our Task Manager for school tasks!");
                                 break;
 
                                 }
@@ -171,13 +186,13 @@ public class Main {
         toDoListPrivate.addTask(task);
     }
 
-    // method that checks of the task is in the arraylist
+    // method that checks if the task is in the arraylist
     public static void findTaskSchool(){
         System.out.print("Enter the Name of the task you are searching for: ");
         String nameOfTask = scanner.nextLine();
         toDoListSchool.findTask(nameOfTask);
     }
-    // method that checks of the task is in the arraylist
+    // method that checks if the task is in the arraylist
     public static void findTaskPrivate(){
         System.out.print("Enter the Name of the task you are searching for: ");
         String nameOfTask = scanner.nextLine();
@@ -266,21 +281,20 @@ public class Main {
 
     //method prints the instructions for the user of the program
     public static void printMenu (){
-
-        System.out.println("\nYou can choose between the following alternatives: ");
-        System.out.println("0 - Show alternatives");
-        System.out.println("1 - show to-do list");
-        System.out.println("2 - Add task to list");
-        System.out.println("3 - remove task from list");
-        System.out.println("4 - update existing task ");
-        System.out.println("5 - search in to-do list");
-        System.out.println("6 - Mark a task as done");
-        System.out.println("7 - Sort the tasks by their priority");
-        System.out.println("8 - Exit the program");
-
+        System.out.println(
+                "\nYou can choose between the following alternatives: " +
+                "\n0 - Show alternatives" +
+                "\n1 - Show to-do list" +
+                "\n2 - Add task to list" +
+                "\n3 - Remove task from list" +
+                "\n4 - Update existing task " +
+                "\n5 - Search in to-do list" +
+                "\n6 - Mark a task as done" +
+                "\n7 - Sort the tasks by their priority" +
+                "\n8 - Exit the program");
     }
 
-    //method to find a task in the list and mark the task as done
+    //method to find a task in the list and marks the task as done
     public static void taskDoneSchool(){
         System.out.println("Which task should be marked as done?");
         String nameTaskDone = scanner.nextLine();
@@ -294,7 +308,8 @@ public class Main {
             System.out.println("Task " + nameTaskDone + " marked as done! Good job!" );
         }
     }
-    //method to find a task in the list and mark the task as done
+
+    //method to find a task in the list and marks the task as done
     public static void taskDonePrivate(){
         System.out.println("Which task should be marked as done?");
         String nameTaskDone = scanner.nextLine();
@@ -308,11 +323,5 @@ public class Main {
             System.out.println("Task " + nameTaskDone + " marked as done! Good job!" );
         }
     }
-
-
-
-
+    
     }
-
-
-

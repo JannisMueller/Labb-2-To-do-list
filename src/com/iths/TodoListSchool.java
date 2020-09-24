@@ -7,11 +7,12 @@ public class TodoListSchool extends ToDoList {
 
     private ArrayList<SchoolTask> toDoListSchool = new ArrayList<>();
 
-    //method that adds a new object task to the arraylist (toDolist)
+    //method that adds a new object task to the arraylist (toDoList)
     public void addTask(SchoolTask task) {
         toDoListSchool.add(task);
     }
 
+    @Override
     //method that prints out the Todolist
     public void printToDoList() {
         for (int i = 0; i < toDoListSchool.size(); i++) {
@@ -27,6 +28,7 @@ public class TodoListSchool extends ToDoList {
 
     }
 
+    @Override
     // method that checks of the task is in the arraylist
     public boolean findTask(String taskName) {
         if (findIndex(taskName) >= 0) {
@@ -39,7 +41,7 @@ public class TodoListSchool extends ToDoList {
 
     }
 
-    // private method that returns the index of an task by the name of the task‚
+    // private method that returns the index of an task when provided with the name of the task.
     private int findIndex(String taskName) {
         for (int i = 0; i < this.toDoListSchool.size(); i++) {
             SchoolTask task = this.toDoListSchool.get(i);
@@ -50,6 +52,7 @@ public class TodoListSchool extends ToDoList {
         return -1;
     }
 
+    @Override
     // method that removes a task from the list
     public void removeTask(String taskName) {
         int indexOfTask = findIndex(taskName);
@@ -81,7 +84,7 @@ public class TodoListSchool extends ToDoList {
         return null;
     }
 
-    //method to find a task in the list and mark the task as done
+    //method to find a task in the list and marks the task as done
     public void taskDone(SchoolTask oldTask) {
         int foundPosition = findIndex(oldTask.getNameOfTask());
         if (foundPosition >= 0) {
@@ -91,6 +94,7 @@ public class TodoListSchool extends ToDoList {
         }
     }
 
+    @Override
     //method to sort the task by priority (descending order)
     public void sortAfterPriority() {
         toDoListSchool.sort(Comparator.comparing(Task::getPriority, Comparator.reverseOrder()));

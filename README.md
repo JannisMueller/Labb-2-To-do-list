@@ -1,6 +1,5 @@
 # Labb-2-To-do-list
-## Labb 2 – Objektorienterad programmering i
-Java
+## Labb 2 – Objektorienterad programmering i Java
 
 Denna repository innerhåller min projekt för Labb 2 i kursen "Java programmering" (ITHS, 2020)
 

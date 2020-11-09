@@ -1,7 +1,7 @@
 # Labb-2-To-do-list
 ## Labb 2 – Objektorienterad programmering i Java
 
-Denna repository innehåller mitt projekt för Labb 2 för kursen "Java programmering" (ITHS, 2020)
+Denna repository innehåller mitt projekt för Labb 2 (kurs "Java programmering", ITHS 2020)
 
 ## Mål och syfte
 I Labb 2 gör du ett program med objektorienterad programmering och datastrukturer i Java. Syftet är att kunna använda objektorienterad design när man skapar program i Java. Detta skapar förutsättningar för att arbeta med objektorienterad programmering i såväl kommande kurser som i den framtida yrkesrollen.
